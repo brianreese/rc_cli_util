@@ -3,7 +3,6 @@ import logger from '../index';
 (async function styleguide() {
   await logger.printBanner('The  Banner  title  here');
   await logger.printLogo();
-
   logger.makeSpace();
 
   logger.message("This is an 'h2' \nBelow are several other text styles:", 'h2');
@@ -25,4 +24,10 @@ import logger from '../index';
   logger.warning("This is a warning message message");
   logger.warning("Followed by another warning.");
   logger.error("This is an error message!");
+
+  const { answer } = await logger.prompt({ properties: { answer: { message: 'Finally, a prompt... (answer anything)' } }} );
+  logger.status('Prompt completed. You answered:');
+  logger.status(answer);
+
+
 })();

@@ -25,6 +25,7 @@
     "canvas": "^2.6.1",
     "chalk": "^3.0.0",
     "cli": ">=1.0.0",
-    "cli-format": "^3.0.9"
+    "cli-format": "^3.0.9",
+    "prompt": "git://github.com/flatiron/prompt.git#8d5495c84c3f433b8f26ea2798f8ba68c3656459"
   }
 }
