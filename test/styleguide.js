@@ -25,9 +25,12 @@ import logger from '../index';
   logger.warning("Followed by another warning.");
   logger.error("This is an error message!");
 
-  const { answer } = await logger.prompt({ properties: { answer: { message: 'Finally, a prompt... (answer anything)' } }} );
+  const { response } = await logger.prompt('Finally, a prompt... (answer anything)');
   logger.status('Prompt completed. You answered:');
-  logger.status(answer);
+  logger.status(response);
 
+  const { response: response2 } = await logger.prompt('Great, one more time (to be sure we\'re not clobbering multiple prompts... (answer anything)');
+  logger.status('Prompt completed. You answered:');
+  logger.status(response2);
 
 })();
