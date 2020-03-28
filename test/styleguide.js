@@ -33,4 +33,8 @@ import logger from '../index';
   logger.status('Prompt completed. You answered:');
   logger.status(response2);
 
+  const { response: booleanResp } = await logger.promptYN('One more prompt, requires a y/n answer...');
+  logger.status('Prompt completed. Your response was:');
+  logger.status(booleanResp);
+
 })();
