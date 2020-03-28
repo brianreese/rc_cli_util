@@ -1,4 +1,5 @@
-import logger from '../index';
+import logger, { ProgressBar } from '../index';
+const bar1 = new ProgressBar();
 
 (async function styleguide() {
   await logger.printBanner('The  Banner  title  here');
@@ -25,6 +26,25 @@ import logger from '../index';
   logger.warning("Followed by another warning.");
   logger.error("This is an error message!");
 
+  logger.message('A progress bar...', 'h3');
+  logger.message('This bar will jump from 60% to 100%');
+  await new Promise(resolve => {
+    bar1.start();
+    let bar1Progress = 0;
+    let int = setInterval(() => {
+      bar1.increment();
+      if (++bar1Progress >= 60) {
+        clearInterval(int);
+        bar1.update(100);
+        bar1.stop();
+        resolve();
+      }
+    }, 35);
+  });
+  logger.makeSpace();
+  logger.success('complete!');
+  logger.makeSpace();
+
   const { response } = await logger.prompt('Finally, a prompt... (answer anything)');
   logger.status('Prompt completed. You answered:');
   logger.status(response);
@@ -36,5 +56,6 @@ import logger from '../index';
   const { response: booleanResp } = await logger.promptYN('One more prompt, requires a y/n answer...');
   logger.status('Prompt completed. Your response was:');
   logger.status(booleanResp);
+  logger.makeSpace();
 
 })();
