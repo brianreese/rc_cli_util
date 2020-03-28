@@ -1,6 +1,7 @@
 import logger from '../index';
 
 (async function styleguide() {
+  await logger.printBanner('The  Banner  title  here');
   await logger.printLogo();
 
   logger.makeSpace();
