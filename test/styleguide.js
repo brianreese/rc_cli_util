@@ -20,7 +20,7 @@ import logger from '../index';
   logger.status("This is the default status message");
   logger.status("another status message");
   logger.status("They really blend in to the background...");
-  logger.status("things are working: Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.");
+  logger.success("things are working: Curabitur blandit tempus porttitor. Aenean lacinia bibendum nulla sed consectetur.");
   logger.warning("This is a warning message message");
   logger.warning("Followed by another warning.");
   logger.error("This is an error message!");
