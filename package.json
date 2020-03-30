@@ -1,5 +1,5 @@
 {
-  "name": "rc_cli_logo",
+  "name": "rc_cli_util",
   "version": "1.0.0",
   "description": "Logo for RC node cli projects.",
   "main": "index.js",
